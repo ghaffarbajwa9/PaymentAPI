@@ -1,0 +1,15 @@
+Create API project.
+Model 
+    Account,  id, name, balance
+    Payment,  id, amount, date
+    User, id, name, email, password
+Relation 
+    Account has many payments
+    User has one Account
+    User has many payments
+User only see the payments that belongs to him.
+
+Frontend in React js.
+Inportant note only login user access data.
+
+Saturday 10:00
