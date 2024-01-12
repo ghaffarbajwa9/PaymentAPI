@@ -1,15 +1,42 @@
-import {AccountList, UserList, PaymentList} from './components'
+import {AccountList, UserList, PaymentList, Login} from './components';
+import  AddPayment  from './components/payments/addpayment/addPayment';
 import './App.css';
+import { createBrowserRouter, RouterProvider, } from "react-router-dom";
+import ErrorPage from './error-page';
+// import AuthProvider from './context/AuthProvider'
+
+
+const root = createBrowserRouter([
+  {
+    path: "/",
+    element: <UserList />,
+    errorElement:<ErrorPage />,
+  },
+  {
+    path: "/accounts",
+    element: <AccountList />,
+    errorElement:<ErrorPage />,
+  },
+  {
+    path: "/payments",
+    element: <PaymentList />,
+    errorElement:<ErrorPage />,
+  },
+  {
+    path: "/addpayment",
+    element: <AddPayment />,
+    errorElement:<ErrorPage />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+    errorElement:<ErrorPage />,
+  }
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <AccountList />
-        <UserList />
-        <PaymentList />
-      </header>
-    </div>
+        <RouterProvider router={root} />   
   );
 }
 
