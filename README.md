@@ -44,7 +44,7 @@
 
 > npm install
 
-> npm run
+> npm start
 ```
  react application will open in browser with port 3001
 
