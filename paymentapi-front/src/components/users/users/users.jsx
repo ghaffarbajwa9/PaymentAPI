@@ -12,7 +12,18 @@ function UserList() {
     requestUsers();
   }, []);
 
-  return users.map(user => <div>{user.attributes.name}</div>);
+  const ulStyle = {
+    border: "2px solid black",
+    width: "33%",
+    margin: "auto",
+    padding: "5px",
+};
+
+  return users.map(user => <div style={ulStyle}>
+    <div>Name:{user.attributes.name}</div>
+    <div>Email:{user.attributes.email}</div>
+    </div>
+    );
 }
 
 export default UserList;

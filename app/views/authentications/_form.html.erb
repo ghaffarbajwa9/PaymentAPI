@@ -1,0 +1,17 @@
+<%= form_with(model: authentication) do |form| %>
+  <% if authentication.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(authentication.errors.count, "error") %> prohibited this authentication from being saved:</h2>
+
+      <ul>
+        <% authentication.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

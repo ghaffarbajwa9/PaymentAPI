@@ -1,5 +1,7 @@
 class Api::V1::UsersController < ApplicationController
     protect_from_forgery with: :null_session
+    # skip_before_action :authorize_request, :only => :create
+
     before_action :get_user, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -15,7 +17,12 @@ class Api::V1::UsersController < ApplicationController
     end 
     def create 
         @user=User.new(user_params)
+        # auth_token = AuthenticateUser.new(@user.email, @user.password).call
+        # response = { message: "Account created.", auth_token: auth_token }
+
+
         if @user.save 
+            login!
             render json: UserSerializer.new(@user).serialized_json
         else
             render json: {error: @user.errors.messages }, status: 422
@@ -46,7 +53,7 @@ class Api::V1::UsersController < ApplicationController
         @user = User.find(params[:id])
     end
     def user_params
-        params.require(:user).permit(:name, :email, :password_digest)
+        params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
     # def options
     #     @options ||= {include: %i[accounts, payments]} 

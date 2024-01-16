@@ -120,6 +120,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jwt (2.7.1)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -248,6 +249,7 @@ DEPENDENCIES
   fast_jsonapi (~> 1.5)
   importmap-rails
   jbuilder
+  jwt (~> 2.7)
   pg (~> 1.1)
   puma (>= 5.0)
   rack-cors (~> 2.0)

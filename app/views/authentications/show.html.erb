@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @authentication %>
+
+<div>
+  <%= link_to "Edit this authentication", edit_authentication_path(@authentication) %> |
+  <%= link_to "Back to authentications", authentications_path %>
+
+  <%= button_to "Destroy this authentication", @authentication, method: :delete %>
+</div>

@@ -69,3 +69,5 @@ end
 gem "fast_jsonapi", "~> 1.5"
 
 gem "rack-cors", "~> 2.0"
+
+gem "jwt", "~> 2.7"

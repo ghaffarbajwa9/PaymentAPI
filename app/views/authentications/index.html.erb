@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Authentications</h1>
+
+<div id="authentications">
+  <% @authentications.each do |authentication| %>
+    <%= render authentication %>
+    <p>
+      <%= link_to "Show this authentication", authentication %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New authentication", new_authentication_path %>
