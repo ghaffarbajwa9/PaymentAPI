@@ -4,10 +4,10 @@ import {useNavigate} from 'react-router-dom';
 class AddPayment extends Component{
     constructor(props){
         super(props);
-        const currentDate =new Date();
+        // const currentDate =new Date();
         this.state = { 
             amount: '',
-            date: currentDate.toDateString(),
+            date: Date(),
             user_id: '',
             account_id: '',
             errors: ''

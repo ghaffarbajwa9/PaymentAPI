@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import {Link, useNavigate as navigate} from 'react-router-dom'
+import {Link, Navigate} from 'react-router-dom'
+const redirect = ()=>{
+    <Navigate to="/"/>
+}
 class Login extends Component {
-    
     constructor(props) {
         super(props);
         this.state = { 
@@ -41,8 +43,8 @@ class Login extends Component {
     };
 
     redirect = () => {
-        navigate('/')
-        this.props.history.push('/')
+        redirect();
+        // this.props.history.push('/')
     }
     handleErrors = () => {
         return (
